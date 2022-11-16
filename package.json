@@ -3,8 +3,15 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
+		"dev:only": "vite dev",
+		"build:only": "vite build",
+		"tailwind:watch": "cross-env TAILWIND_MODE=watch cross-env NODE_ENV=development  postcss src/styles/tailwind.css -o static/app.css -w",
+		"tailwind:build": "cross-env TAILWIND_MODE=build cross-env NODE_ENV=production  postcss src/styles/tailwind.css -o static/app.css",
+	
+		"dev": "concurrently \"npm run dev:only\" \"npm run tailwind:watch\"",
+	
+		"build": "npm run tailwind:build && npm run build:only",
+	
 		"preview": "vite preview",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write ."
