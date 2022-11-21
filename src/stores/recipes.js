@@ -6,7 +6,6 @@ async function fetch_recipes() {
     const url = 'http://umamidrupal.ddev.site/jsonapi/node/recipe?include=field_media_image.field_media_image&fields[file--file]=url,uri';
     const response = await fetch(url);
     const cats = await response.json();
-    const recipe_array = [];
 
     const recipe_data = cats.data;
     const recipe_images = cats.included;
