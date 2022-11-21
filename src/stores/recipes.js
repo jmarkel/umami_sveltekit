@@ -16,10 +16,10 @@ async function fetch_recipes() {
         const ix = index + count;
         const recipe = {
             title: element.attributes.title,
+            difficulty: element.attributes.field_difficulty,
             summary: element.attributes.field_summary.value,
             image: recipe_images[ix].attributes.uri.url,
         }
-
         return recipe;
     })
     recipes.set(loaded_recipes);

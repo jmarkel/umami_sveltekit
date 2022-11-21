@@ -466,6 +466,9 @@ video {
 .pt-2 {
   padding-top: 0.5rem;
 }
+.uppercase {
+  text-transform: uppercase;
+}
 /* custom CSS goes here */
 /* Directive controlling where Tailwind injects responsive variations of utilities.
    By default Tailwind normally append these at the end of your stylesheet. */
@@ -474,16 +477,28 @@ video {
     -moz-columns: 2;
          columns: 2;
   }
+  .lg\:columns-3 {
+    -moz-columns: 3;
+         columns: 3;
+  }
 }
 @media (min-width: 1280px) {
   .xl\:columns-3 {
     -moz-columns: 3;
          columns: 3;
   }
+  .xl\:columns-4 {
+    -moz-columns: 4;
+         columns: 4;
+  }
 }
 @media (min-width: 1536px) {
   .\32xl\:columns-4 {
     -moz-columns: 4;
          columns: 4;
+  }
+  .\32xl\:columns-5 {
+    -moz-columns: 5;
+         columns: 5;
   }
 }
