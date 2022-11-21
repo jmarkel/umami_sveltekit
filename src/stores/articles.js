@@ -6,7 +6,6 @@ async function fetch_articles() {
     const url = 'http://umamidrupal.ddev.site/jsonapi/node/article?include=field_media_image.field_media_image&fields[file--file]=url,uri';
     const response = await fetch(url);
     const cats = await response.json();
-    const article_array = [];
 
     const article_data = cats.data;
     const article_images = cats.included;
